@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Train Information Web App</title>
+    <link rel="stylesheet" href="./train.css">
+    <link rel="icon" href="./logo.webp">
+</head>
+<!-- Project Description: Real-time Train Information Web App
+API: https://rapidapi.com/IRCTCAPI/api/irctc1 (API-KEY Required)
+Overview: This project aims to create a web application that provides real-time information about trains, including schedules, routes, and PNR status. The app will utilize the Train Information API to fetch the necessary data and display it to the user in a user-friendly manner.
+Features:
+Search Station: Allows users to search for specific train stations and view information such as station code, name, and location.
+Search Train: Enables users to search for specific trains by train number or name and view details such as train type, departure time, and arrival time.
+TrainsBetweenStations: Provides users with a list of trains running between two specified stations, along with details like train name, number, and schedule.
+Get Train Schedule: Allows users to retrieve the schedule of a specific train, including all the stops, departure, and arrival times.
+Get PNR Status V3: Enables users to check the PNR status of their ticket by entering the PNR number.
+Technologies Used:
+HTML: For creating the basic structure of the web pages.
+CSS: For styling the application and ensuring a responsive design.
+JavaScript: For implementing the logic to interact with the Train Information API, handle user inputs, and display the information.
+Implementation Details:
+The application will have a clean and intuitive layout, with a search bar and input fields for user interaction.
+User inputs will be validated to ensure correct data is sent to the API.
+A responsive design will be implemented to ensure the application works seamlessly across all devices, including mobiles, tablets, and laptops.
+Error handling will be implemented to display a 404 page if the requested data is not found. -->
+<body>
+    <header id="section1">
+        <nav>
+            <ul>
+               <li> <h1>Train Information Center</h1></li>
+            </ul>
+            <ul>
+                <li><a href="#search-station">Search Station</a></li>
+                <li><a href="#search-train">Search Train</a></li>
+                <li><a href="#train-starts">Trains Between Station</a></li>
+                <li><a href="#get-train-schedule">Get Train Schedule</a></li>
+                <li><a href="#get-pnr-station">Get PNR Status</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form action="" >
+        <label for="search-station">Search Stations</label>
+        <input type="text" placeholder="Location" id="search-station">
+        <input type="submit" value="Search" onclick="search_Specific_TS_Info_ByLOC(event)">
+        <br>
+        <label for="search-train">Search Train</label>
+        <input type="text" placeholder="Search Train" id="search-train">
+        <input type="submit" value="Search" onclick="Train_ByNameOrByNumber(event)">
+        <br>
+        <label for="train-starts">Trains Between Stations</label>
+        <input type="text" placeholder="From" id="train-starts">
+        <input type="text" placeholder="To" id="train-ends">
+        <input type="submit" value="Search" onclick="stationsBetween_ByFromAndTo(event)">
+        <br>
+        <label for="get-train-schedule">Get Train Schedule</label>
+        <input type="text" placeholder="Give Train Number" id="get-train-schedule">
+        <input type="submit" value="Search" onclick="trainScheduleByTrainNumber(event)">
+        <br>
+        <label for="get-pnr-station">Get PNR Status</label>
+        <input type="text" placeholder="Get PNR Status" id="get-pnr-station">
+        <input type="submit" value="Search" onclick="ticketPnrStatus()">
+    </form>
+
+    <div id="results">
+        <h3 id="details1"></h3>
+        <h3 id="details2"></h3>
+        <h3 id="details3"></h3>
+        <h3 id="details4"></h3>
+        <h3 id="details5"></h3>
+        <h3 id="details6"></h3>
+    </div>
+    
+    <script src="./index.js"></script>
+    <footer>
+        Developed By Manjunath Pasupula @2025 jspiders
+    </footer>
+</body>
+</html>
